@@ -43,6 +43,7 @@ void juego_adivinar(int intentos)
 
 int main(void)
 {
+    // Empezar juego para adivinar números con 5 intentos:
     juego_adivinar(5);
 
     return 0;
