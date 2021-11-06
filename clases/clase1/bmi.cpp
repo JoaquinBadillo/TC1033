@@ -1,3 +1,5 @@
+// Calculo de indice de masa corporal
+
 #include <iostream>
 #include <cmath>
 
