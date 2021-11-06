@@ -1,10 +1,11 @@
-// Calculo de indice de masa corporal
+// Calculo de indice de masa corporal (BMI)
 
 #include <iostream>
 #include <cmath>
 
 using namespace std;
 
+// Función que calcula el BMI y muestra por pantalla lo que implica el resultado:
 void bmi(float altura, float peso)
 {
     float indice = peso / pow(altura, 2);
@@ -34,15 +35,17 @@ void bmi(float altura, float peso)
 
 int main(void)
 {
+    // Inicialización de variables
     float peso = 0;
     float altura = 0;
 
+    // Pedir al usuario por su peso y altura
     cout << "Dame tu peso: ";
     cin >> peso;
-
     cout << "Dame tu altura: ";
     cin >> altura;
 
+    // Mostrar si su peso es normal, inferior o superior al adecuado para su altura:
     bmi(altura, peso);
 
     return 0;

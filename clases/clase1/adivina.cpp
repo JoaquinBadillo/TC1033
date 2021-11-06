@@ -11,13 +11,15 @@ void juego_adivinar(int intentos)
 {
     srand(time(0)); // Random seed
     int numero = rand() % 11; // Entero random entre 0 y 10
-    int intento = 0; // Control del intento en el que vas
+    int intento = 0; // Número ingresado por el usuario, inicializado en 0
 
     for (int i=0; i<intentos; i++)
     {
         cout << "Tienes " << intentos - i << " intentos." << endl;
         cout << "Adivina un número entre 0 y 10: ";
         cin >> intento;
+
+        // Comparar el número del usuario con el número generado aleatoriamente:
         if (intento == numero)
         {
             cout << "Adivinaste!" << endl;

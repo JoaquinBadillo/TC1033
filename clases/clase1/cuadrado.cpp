@@ -4,6 +4,8 @@
 
 using namespace std;
 
+// Función que muestra por pantalla un rectángulo usando los símbolos "+" y "-".
+// Este rectángulo tiene como base "width" y como altura "height":
 void cuadrado(int width, int height)
 {
     if (width % 2 == 0)
@@ -38,15 +40,17 @@ void cuadrado(int width, int height)
 
 int main(void)
 {
+    // Inicialización de variables:
     int alto = 0;
     int ancho = 0;
 
+    // Pedir al usuario por lo valores de las variables
     cout << "Dame el alto del cuadrado: ";
     cin >> alto;
-
     cout << "Dame el ancho del cuadrado: ";
     cin >> ancho;
 
+    // Crear un rectángulo con el ancho y alto dados:
     cuadrado(ancho, alto);
 
     return 0;

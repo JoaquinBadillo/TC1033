@@ -9,9 +9,13 @@
 
 using namespace std;
 
+// Función que regresa cuántos números pares hay en un vector:
 int cuenta_pares(vector<int> numeros)
 {
+    // Iniciamos una cuenta de números pares en 0
     int cuenta = 0;
+
+    // Iteramos en el vector y si encontramos un núemero par incrementamos la cuenta
     for (int i=0; i<numeros.size(); i++)
     {
         if(numeros[i] % 2 == 0)
@@ -19,13 +23,17 @@ int cuenta_pares(vector<int> numeros)
             cuenta++;
         }
     }
-
-    return cuenta;
+    // Regresamos la cuenta de números pares.
+    return cuenta; 
 }
 
+// Función que regresa cuántos números impares hay en un vector:
 int cuenta_impares(vector<int> numeros)
 {
+    // Iniciamos una cuenta de números impares en 0
     int cuenta = 0;
+
+    // Iteramos en el vector y si encontramos un núemero impar incrementamos la cuenta
     for (int idx = 0; idx<numeros.size(); idx++)
     {
         if (numeros[idx] % 2 != 0)
@@ -34,37 +42,40 @@ int cuenta_impares(vector<int> numeros)
         }
     }
 
+    // Regresamos la cuenta de números impares
     return cuenta;
 }
 
 int main(void)
 {
+    // Inicialización de variables
     int terminos = 0;
-    vector<int> numeros;
+    vector<int> numeros; // Vector vacío
 
+    // Pedimos al usuario por la cantidad de números en su lista (vector)
     cout << "Cuántos numeros quieres que tenga la lista: ";
     cin >> terminos;
-    
+
+    // Añadimos tantos números aleatorios entre 1 y 20 como pidió el usuario:
     srand(time(0));
     for (int id=0; id<terminos; id++)
     {
         numeros.push_back(1 + rand() % 20);
     }
 
+    // Guardamos la cuenta de números pares e impares de la lista en variables
     int pares = cuenta_pares(numeros);
     int impares = cuenta_impares(numeros);
 
-    // Mostrar el vector con formato de lista de Python:
+    // Mostramos el vector con formato de lista de Python:
     cout << "Tu lista es: " << "[";
-    
     for (int i=0; i<terminos-1; i++)
     {
         cout << numeros[i] << ", ";
     }
-
     cout << numeros[terminos-1] << "]" << endl;
 
-    // Mostrar por pantalla las cuentas:
+    // Mostramos por pantalla las cuentas:
     cout << "Tu lista tiene " << pares << " numeros pares" << endl;
     cout << "Tu lista tiene " << impares << " numeros impares" << endl;
 
