@@ -24,8 +24,9 @@ int main(void)
     // Inicializar variable del radio
     float radio = 0;
 
-    // Pedir al usuario el valor del radio y guardarlo en la variable
     cout << "Calculo de area y volumen"<<endl;
+
+    // Pedir al usuario el valor del radio y guardarlo en la variable
     cout << "Dame el radio de la esfera: ";
     cin >> radio;
 
