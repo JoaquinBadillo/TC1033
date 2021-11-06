@@ -21,7 +21,7 @@ void serie_harmonica(int terminos)
         }
     }
 
-    // Mostramos por pantalla el resultado de la suma
+    // Mostramos por pantalla el resultado de la suma con 4 cifras decimales:
     cout << ": " << round(suma*10000.0)/10000.0 << endl;
 }
 

@@ -34,7 +34,7 @@ int main(void)
     float area = area_esfera(radio);
     float volumen = volumen_esfera(radio);
 
-    // Mostrar por pantalla los resultados
+    // Mostrar por pantalla los resultados con 3 cifras decimales de precisión
     cout << "Area: " << round(area*1000.0)/1000.0 << " Volumen: " << round(volumen*1000.0)/1000.0 << endl;
 
     return 0;
