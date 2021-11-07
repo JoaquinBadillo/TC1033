@@ -1,3 +1,7 @@
+// Saludo
+// Código original en Python y adaptado a C++ por Octavio Navarro
+// Última modificación 6 de Novimebre de 2021
+
 #include <cmath>
 #include <string>
 #include <iostream>

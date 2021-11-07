@@ -1,4 +1,8 @@
 // Serie harmónica
+// Código original de Python por Octavio Navarro
+// Código adaptado a C++ por Joaquín Badillo
+// Última modificación 6 de Novimebre de 2021
+
 #include <iostream>
 #include <cmath>
 
