@@ -53,6 +53,8 @@ class Alumno
         // Setters
         void setMatricula(string matricula_)
         {
+            // Las matrículas de alumnos deben empezar con A
+            
             if(matricula_[0] == 'A')
             {
                 matricula = matricula_;
