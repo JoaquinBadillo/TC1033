@@ -48,4 +48,16 @@ class Triangle
             
             return 0.5*a*b*sin(theta);
         }
+
+        void printVertices()
+        {
+            cout << "V1:";
+            vertex1.print();
+
+            cout << "V2:";
+            vertex2.print();
+
+            cout << "V3:";
+            vertex3.print();
+        }
 };
