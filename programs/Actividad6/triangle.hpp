@@ -21,9 +21,9 @@ class Triangle
 
         Triangle()
         {
-            vertex1 = Point(0,0);
-            vertex2 = Point(50,30);
-            vertex3 = Point(25,10); 
+            vertex1 = Point(0.0,0.0);
+            vertex2 = Point(50.0,30.0);
+            vertex3 = Point(25.0,10.0); 
         }
 
         double perimeter()
