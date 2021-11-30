@@ -54,14 +54,14 @@ class ShoppingCart
 
         void print(void)
         {
-            // Sacrificar memoria por mayor velocidad ¯\_(ツ)_/¯
-            int size = productos.size(); 
+            // Sacrificar memoria (32 bits) por mayor velocidad ¯\_(ツ)_/¯
+            int size = productos.size();
 
-            if(size = 0)
+            if(size = 0) // Carrito vacio
             {
                 cout << "Su carrito de compras esta vacio" << endl;
             }
-            else
+            else // Mostrar elementos del carrito
             {
                 for(int i=0; i < productos.size(); i++)
                 {
@@ -88,7 +88,11 @@ class ShoppingCart
                }
                else
                {
-                   total -= productos[i].getPrecio(); // Restar del total elementos no disponibles
+                   cout << "Lo sentimos " << productos[i].getNombre() << " ya no está disponible." << endl;
+                   eliminarProducto(productos[i]); // Los elementos no disponbiles se quitan del carrito
+                   cout << productos[i].getNombre() << " se ha eliminado del carrito." << endl;
+
+                   total -= productos[i].getPrecio(); // Restar del total productos eliminados del carrito
                }
            }
            cout << "Total: $" << total << endl;
@@ -104,14 +108,11 @@ class ShoppingCart
                cout << "Pago exitoso." << endl;
                for(int i=0; i < productos.size(); i++)
                {
-                    if(productos[i].getStock() > 0)
-                    {
-                        productos[i].reduceStock(1);
-                    }
+                   // Se compraron los productos del carrito, reducir stock
+                    productos[i].reduceStock(1);
                }
                vaciar();
            }
-
            else
            {
                cout << "Lamentamos que no haya encontrado lo que buscaba." << endl; 

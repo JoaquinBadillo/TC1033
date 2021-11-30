@@ -13,25 +13,28 @@ class Product
 {
     private:
         string nombre;
-        unsigned int id;
+        int id;
         int stock;
         float precio;
 
     public:
         Product()
         {
-            setNombre("Producto Sin Nombre");
-            setId(0);
-            setStock(0);
-            setPrecio(0);
+            nombre = "Producto Sin Nombre";
+            id = 0;
+            stock = 0;
+            precio = 0;
         }
 
         Product(string nombre_)
         {
             setNombre(nombre_);
+            id = 0;
+            stock = 0;
+            precio = 0;
         }
 
-        Product(string nombre_, unsigned int id_, int stock_, float precio_)
+        Product(string nombre_, int id_, int stock_, float precio_)
         {
             setNombre(nombre_);
             setId(id_);
@@ -45,9 +48,16 @@ class Product
             nombre = nombre_;
         }
 
-        void setId(unsigned int id_)
+        void setId(int id_)
         {
-            id = id_;
+            if(id_ < 0)
+            {
+                id = 0;
+            }
+            else
+            {
+                id = id_;
+            }
         }
 
         int setStock(int stock_)
@@ -69,7 +79,7 @@ class Product
 
         int setPrecio(float precio_)
         {
-            if(precio < 0)
+            if(precio_ < 0)
             {
                 precio = 0;
                 return 1; // 1 indica que se uso un precio no válido
@@ -84,7 +94,7 @@ class Product
             return nombre;
         }
 
-        unsigned int getId(void)
+        int getId(void)
         {
             return id;
         }
@@ -101,6 +111,7 @@ class Product
 
         void mostrar(void)
         {
+            // Muestra los datos relevantes para un usuario (nombre y precio, dependiendo de la disponibilidad)
             cout << nombre << ": ";
             if(stock > 0)
             {
@@ -110,6 +121,15 @@ class Product
             {
                 cout << "Agotado" << endl;
             }
+        }
+
+        void datos(void)
+        {
+            // Muestra todos los datos del producto
+            cout << "Nombre: " << nombre << endl;
+            cout << "ID: " << id << endl;
+            cout << "Stock: " << stock << endl;
+            cout << "Precio: $" << setprecision(2) << fixed << precio << endl;
         }
 };
 

@@ -16,20 +16,24 @@ class User
         string username;
         string password;
         string mail;
-        string destino;
         ShoppingCart cart;
         vector<Wishlist> wishlists;
     
     public:
+        User()
+        {
+            username = "Usuario sin nombre";
+            password = "PASSWORD";
+            mail = "no-mail";
+            cart = ShoppingCart();
+        }
+
         User(string username_, string password_, string mail_)
         {
             setUsername(username_);
             setPassword(password_);
             setMail(mail_);
             cart = ShoppingCart();
-            destino = "MEX, CDMX, Tec CSF";
-
-            cout << "Bienvenidx " << username << endl;
         }
 
         void setUsername(string username_)
@@ -55,6 +59,11 @@ class User
         string getPassword(void)
         {
             return password;
+        }
+
+        string getMail(void)
+        {
+            return mail;
         }
 
         void verCarrito()
@@ -86,7 +95,7 @@ class User
 
         int crearWishlist(string wishlist_name)
         {
-            // Las Wishlists deben tener nombres únicos ¯\_(ツ)_/¯ (si no muere el resto de la lógica)
+            // Las Wishlists deben tener nombres únicos ¯\_(ツ)_/¯ (si no muere la lógica de otras funciones)
             for(int i=0; i<wishlists.size(); i++)
             {
                 if(wishlists[i].getNombre()==wishlist_name)
@@ -101,6 +110,7 @@ class User
 
         int agregarAWishlist(string wishlist_name, Product product)
         {
+            // Aquí importa lo de las wishlists con nombres únicos jeje 
             for(int i = 0; i < wishlists.size(); i++)
             {
                 if(wishlists[i].getNombre() == wishlist_name)
