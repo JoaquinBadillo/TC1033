@@ -20,6 +20,8 @@ class User
         vector<Wishlist> wishlists;
     
     public:
+        // Constructores
+
         User()
         {
             username = "Usuario sin nombre";
@@ -36,6 +38,8 @@ class User
             cart = ShoppingCart();
         }
 
+        // Setters
+        
         void setUsername(string username_)
         {
             username = username_;
@@ -50,6 +54,8 @@ class User
         {
             mail = mail_;
         }
+
+        // Getters
 
         string getUsername(void)
         {
@@ -66,6 +72,8 @@ class User
             return mail;
         }
 
+        // Carrito de compras
+
         void verCarrito()
         {
             cout << "Viendo el carrito de compras de " << username << endl;
@@ -73,6 +81,29 @@ class User
 
             cout << endl;
         }
+
+        void agregarAlCarrito(Product producto)
+        {
+            int agregar = cart.agregarProducto(producto);
+
+            if(agregar == 1)
+            {
+                cout << "Por el momento " << producto.getNombre() << " esta agotado" << endl;
+                cout << endl;
+            }
+        }
+
+        void quitarDelCarrito(Product producto)
+        {
+            cart.eliminarProducto(producto);
+        }
+
+        void pagar()
+        {
+            cart.pagar();
+        }
+
+        // Wihslists
 
         void verWishlists()
         {
@@ -120,27 +151,6 @@ class User
                 }
             }
             return 1; // La wishlist no existe
-        }
-
-        void agregarAlCarrito(Product producto)
-        {
-            int agregar = cart.agregarProducto(producto);
-
-            if(agregar == 1)
-            {
-                cout << "Por el momento " << producto.getNombre() << " esta agotado" << endl;
-                cout << endl;
-            }
-        }
-
-        void quitarDelCarrito(Product producto)
-        {
-            cart.eliminarProducto(producto);
-        }
-
-        void pagar()
-        {
-            cart.pagar();
         }
 };
 

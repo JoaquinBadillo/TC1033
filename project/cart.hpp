@@ -16,15 +16,21 @@ class ShoppingCart
         float total;
 
     public:
+        // Constructor
+
         ShoppingCart()
         {
             total = 0;   
         }
 
+        // Getters
+        
         vector<Product> getProductos()
         {
             return productos;
         }
+
+        // Métodos para manipular atributos
 
         int agregarProducto(Product producto)
         {
@@ -51,6 +57,13 @@ class ShoppingCart
                 }
             }
         }
+
+        void vaciar(void)
+        {
+            productos.clear();
+        }
+
+        // Métodos adicionales
 
         void print(void)
         {
@@ -117,12 +130,7 @@ class ShoppingCart
            {
                cout << "Lamentamos que no haya encontrado lo que buscaba." << endl; 
            }
-        }
-
-        void vaciar(void)
-        {
-            productos.clear();
-        }
+        }     
 };
 
 #endif

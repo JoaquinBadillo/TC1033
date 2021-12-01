@@ -18,6 +18,8 @@ class Product
         float precio;
 
     public:
+        // Constructores
+
         Product()
         {
             nombre = "Producto Sin Nombre";
@@ -42,6 +44,8 @@ class Product
             setPrecio(precio_);
 
         }
+
+        // Setters
 
         void setNombre(string nombre_)
         {
@@ -72,11 +76,6 @@ class Product
             return 0; // 0 indica que se actualizó el stock
         }
 
-        void reduceStock(int n)
-        {
-            stock -= n;
-        }
-
         int setPrecio(float precio_)
         {
             if(precio_ < 0)
@@ -88,6 +87,13 @@ class Product
             precio = precio_;
             return 0;
         }
+
+        void reduceStock(int n)
+        {
+            stock -= n;
+        }
+
+        // Getters
 
         string getNombre(void)
         {
@@ -108,6 +114,8 @@ class Product
         {
             return precio;
         }
+
+        // Métodos para mostrar atributos por pantalla
 
         void mostrar(void)
         {

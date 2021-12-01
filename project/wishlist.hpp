@@ -15,6 +15,9 @@ class Wishlist
         vector<Product> productos;
 
     public:
+
+        // Constructores
+
         Wishlist()
         {
             nombre = "Lista Sin Nombre";
@@ -24,6 +27,8 @@ class Wishlist
         {
             setNombre(nombre_);
         }
+
+        // Setters
 
         void setNombre(string nombre_)
         {
@@ -48,6 +53,8 @@ class Wishlist
                 }
             }
         }
+
+        // Getters
 
         string getNombre(void)
         {
